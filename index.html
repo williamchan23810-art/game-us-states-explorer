@@ -929,7 +929,7 @@ function App() {
     if (!game.selectedStateId) return;
 
     setGame(prev => { 
-      const stateId = prev.selectedStateId!;
+      const stateId = prev.selectedStateId;
       const currentStatus = prev.stateStatus[stateId];
       
       // Only count score if they haven't answered this state correctly already, or standard increment
