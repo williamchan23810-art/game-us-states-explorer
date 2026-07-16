@@ -821,7 +821,7 @@ function App() {
     if (!state) return;
 
     // Reset current quiz attempt for the clicked state
-    setGame(prev => ({ {
+    setGame(prev => ({
       ...prev,
       selectedStateId: stateId,
       currentMode: null,
@@ -829,7 +829,7 @@ function App() {
       selectedAnswer: null,
       firstQuestionPassed: null,
       lastFeedback: null,
-    } }));
+    }));
   };
 
   // Start the quiz for the selected state
@@ -849,7 +849,7 @@ function App() {
       activeState.outOfStateDistractor.name,
     ]);
 
-    setGame(prev => ({ {
+    setGame(prev => ({
       ...prev,
       currentMode: mode,
       capitolChoices: capChoices,
@@ -858,7 +858,7 @@ function App() {
       firstQuestionPassed: null,
       lastFeedback: null,
       quizStep: mode === 'university' ? 'question-2' : 'question-1',
-    } }));
+    }));
   };
 
   // Submit answer for Capitol Quiz (Question 1)
@@ -878,13 +878,13 @@ function App() {
 
     if (game.currentMode === 'both') {
       // In both mode, record first question result temporarily and proceed to question 2
-      setGame(prev => ({ {
+      setGame(prev => ({
         ...prev,
         firstQuestionPassed: isCorrect,
         selectedAnswer: null,
         lastFeedback: feedback,
         quizStep: 'question-2',
-      } }));
+      }));
     } else {
       // Single quiz mode end
       updateEndState(isCorrect, feedback);
