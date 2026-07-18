@@ -7,10 +7,10 @@
   
   <!-- Open Graph / Facebook / Meta Debugger -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://williamhchan.github.io/us-states-explorer/" />
+  <meta property="og:url" content="https://game-us-states-explorer.netlify.app/" />
   <meta property="og:title" content="US States Explorer & Quiz Game" />
   <meta property="og:description" content="Interactive map explorer and quiz game for the 50 states of the USA. Learn state locations, capitals, and universities." />
-  <meta property="og:image" content="https://williamhchan.github.io/us-states-explorer/og-image.jpg" />
+  <meta property="og:image" content="https://game-us-states-explorer.netlify.app/og-image.jpg" />
   <meta property="og:image:width" content="1024" />
   <meta property="og:image:height" content="1024" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -19,14 +19,19 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="US States Explorer & Quiz Game" />
   <meta name="twitter:description" content="Interactive map explorer and quiz game for the 50 states of the USA. Learn state locations, capitals, and universities." />
-  <meta name="twitter:image" content="https://williamhchan.github.io/us-states-explorer/og-image.jpg" />
+  <meta name="twitter:image" content="https://game-us-states-explorer.netlify.app/og-image.jpg" />
+
+  <!-- Touch Icons for iPhone/iPad & Android Home Screen -->
+  <link rel="apple-touch-icon" sizes="180x180" href="phone-icon.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="phone-icon.png">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- React & ReactDOM CDN -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <!-- Babel CDN for compiling JSX and TypeScript in the browser -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- React & ReactDOM CDN (Production minified) -->
+  <script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+  <!-- Babel CDN for compiling JSX and TypeScript in the browser (Production minified) -->
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.24.8/babel.min.js"></script>
   <style>
     body {
       background-color: #020617; /* bg-slate-950 */
@@ -110,10 +115,7 @@
         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
       </svg>
     );
-  </script>
 
-  <!-- Embed Data & React App -->
-  <script type="text/babel" data-presets="react,typescript">
     // --- Data Sources ---
     const statesData = [
   {
@@ -824,7 +826,7 @@ function App() {
     if (!state) return;
 
     // Reset current quiz attempt for the clicked state
-    setGame(prev => ({ {
+    setGame(prev => ({
       ...prev,
       selectedStateId: stateId,
       currentMode: null,
@@ -832,7 +834,7 @@ function App() {
       selectedAnswer: null,
       firstQuestionPassed: null,
       lastFeedback: null,
-    } }));
+    }));
   };
 
   // Start the quiz for the selected state
@@ -852,7 +854,7 @@ function App() {
       activeState.outOfStateDistractor.name,
     ]);
 
-    setGame(prev => ({ {
+    setGame(prev => ({
       ...prev,
       currentMode: mode,
       capitolChoices: capChoices,
@@ -861,7 +863,7 @@ function App() {
       firstQuestionPassed: null,
       lastFeedback: null,
       quizStep: mode === 'university' ? 'question-2' : 'question-1',
-    } }));
+    }));
   };
 
   // Submit answer for Capitol Quiz (Question 1)
@@ -881,13 +883,13 @@ function App() {
 
     if (game.currentMode === 'both') {
       // In both mode, record first question result temporarily and proceed to question 2
-      setGame(prev => ({ {
+      setGame(prev => ({
         ...prev,
         firstQuestionPassed: isCorrect,
         selectedAnswer: null,
         lastFeedback: feedback,
         quizStep: 'question-2',
-      } }));
+      }));
     } else {
       // Single quiz mode end
       updateEndState(isCorrect, feedback);
@@ -932,7 +934,7 @@ function App() {
     if (!game.selectedStateId) return;
 
     setGame(prev => { 
-      const stateId = prev.selectedStateId!;
+      const stateId = prev.selectedStateId;
       const currentStatus = prev.stateStatus[stateId];
       
       // Only count score if they haven't answered this state correctly already, or standard increment
