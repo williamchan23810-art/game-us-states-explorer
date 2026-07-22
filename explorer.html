@@ -38,6 +38,19 @@
       color: #f8fafc; /* text-slate-100 */
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(4px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.25s ease-out forwards;
+    }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 selection:bg-teal-500/30">
@@ -113,6 +126,48 @@
       <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+      </svg>
+    );
+
+    const InfoIcon = ({ className }) => (
+      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4"/>
+        <path d="M12 8h.01"/>
+      </svg>
+    );
+
+    const HelpCircleIcon = ({ className }) => (
+      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+        <path d="M12 17h.01"/>
+      </svg>
+    );
+
+    const UsersIcon = ({ className }) => (
+      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    );
+
+    const MapPinIcon = ({ className }) => (
+      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+    );
+
+    const TrophyIcon = ({ className }) => (
+      <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+        <path d="M4 22h16"/>
+        <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"/>
+        <path d="M12 2a6 6 0 0 1 6 6v3.5c0 1.66-1.34 3-3 3H9c-1.66 0-3-1.34-3-3V8a6 6 0 0 1 6-6Z"/>
       </svg>
     );
 
@@ -517,6 +572,1310 @@
     topCities: ["Casper", "Laramie", "Gillette"],
     inStateUniversities: ["University of Wyoming", "Casper College"],
     outOfStateDistractor: { name: "Colorado State University", state: "CO" }
+  },
+  {
+    "id": "AS",
+    "name": "American Samoa",
+    "capitol": "Pago Pago",
+    "topCities": [
+      "Pago Pago",
+      "Tafuna",
+      "Leone"
+    ],
+    "inStateUniversities": [
+      "American Samoa Community College"
+    ],
+    "outOfStateDistractor": {
+      "name": "University of Hawaii",
+      "state": "HI"
+    }
+  },
+  {
+    "id": "GU",
+    "name": "Guam",
+    "capitol": "Hagåtña",
+    "topCities": [
+      "Dededo",
+      "Yigo",
+      "Tamuning"
+    ],
+    "inStateUniversities": [
+      "University of Guam",
+      "Guam Community College"
+    ],
+    "outOfStateDistractor": {
+      "name": "University of Hawaii",
+      "state": "HI"
+    }
+  },
+  {
+    "id": "MP",
+    "name": "Northern Mariana Islands",
+    "capitol": "Saipan",
+    "topCities": [
+      "Saipan",
+      "Tinian",
+      "Rota"
+    ],
+    "inStateUniversities": [
+      "Northern Marianas College"
+    ],
+    "outOfStateDistractor": {
+      "name": "University of Guam",
+      "state": "GU"
+    }
+  },
+  {
+    "id": "PR",
+    "name": "Puerto Rico",
+    "capitol": "San Juan",
+    "topCities": [
+      "San Juan",
+      "Bayamón",
+      "Carolina"
+    ],
+    "inStateUniversities": [
+      "University of Puerto Rico",
+      "Inter American University"
+    ],
+    "outOfStateDistractor": {
+      "name": "University of Miami",
+      "state": "FL"
+    }
+  },
+  {
+    "id": "VI",
+    "name": "US Virgin Islands",
+    "capitol": "Charlotte Amalie",
+    "topCities": [
+      "Charlotte Amalie",
+      "Christiansted",
+      "Cruz Bay"
+    ],
+    "inStateUniversities": [
+      "University of the Virgin Islands"
+    ],
+    "outOfStateDistractor": {
+      "name": "University of Puerto Rico",
+      "state": "PR"
+    }
+  },
+  },
+  },
+  },
+  }
+];
+
+    const statesFactsData = [
+  {
+    "state": "Alabama",
+    "population": 5074296,
+    "nickname": "Yellowhammer State",
+    "flower": "Camellia",
+    "bird": "Yellowhammer",
+    "tree": "Southern Longleaf Pine",
+    "animal": "Black Bear",
+    "rock": "Marble",
+    "song": "Alabama",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Alabama.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Seal_of_Alabama.svg",
+    "oldestRestaurant": {
+      "name": "Golden Rule Barbecue",
+      "city": "Irondale"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Alaska",
+    "population": 733583,
+    "nickname": "The Last Frontier",
+    "flower": "Forget-Me-Not",
+    "bird": "Willow Ptarmigan",
+    "tree": "Sitka Spruce",
+    "animal": "Moose",
+    "rock": "Nephrite Jade",
+    "song": "Alaska's Flag",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Alaska.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Seal_of_the_State_of_Alaska.svg",
+    "oldestRestaurant": {
+      "name": "Historic Skagway Inn",
+      "city": "Skagway"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Arizona",
+    "population": 7359197,
+    "nickname": "The Grand Canyon State",
+    "flower": "Saguaro Cactus Blossom",
+    "bird": "Cactus Wren",
+    "tree": "Blue Palo Verde",
+    "animal": "Ring-tailed Cat",
+    "rock": "Turquoise",
+    "song": "Arizona March Song",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Arizona.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/State_Seal_of_Arizona.svg",
+    "oldestRestaurant": {
+      "name": "Palace Restaurant and Saloon",
+      "city": "Prescott"
+    },
+    "sports": {
+      "nba": ["Phoenix Suns"],
+      "nfl": ["Arizona Cardinals"],
+      "mlb": ["Arizona Diamondbacks"]
+    }
+  },
+  {
+    "state": "Arkansas",
+    "population": 3045637,
+    "nickname": "The Natural State",
+    "flower": "Apple Blossom",
+    "bird": "Mockingbird",
+    "tree": "Loblolly Pine",
+    "animal": "White-tailed Deer",
+    "rock": "Bauxite",
+    "song": "Arkansas",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Arkansas.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Seal_of_Arkansas.svg",
+    "oldestRestaurant": {
+      "name": "White House Cafe",
+      "city": "Camden"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "California",
+    "population": 39029342,
+    "nickname": "The Golden State",
+    "flower": "California Poppy",
+    "bird": "California Quail",
+    "tree": "California Redwood",
+    "animal": "California Grizzly Bear",
+    "rock": "Serpentine",
+    "song": "I Love You, California",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Seal_of_California.svg",
+    "oldestRestaurant": {
+      "name": "Tadich Grill",
+      "city": "San Francisco"
+    },
+    "sports": {
+      "nba": ["Golden State Warriors", "Los Angeles Lakers", "Los Angeles Clippers", "Sacramento Kings"],
+      "nfl": ["Los Angeles Rams", "Los Angeles Chargers", "San Francisco 49ers"],
+      "mlb": ["Los Angeles Dodgers", "Los Angeles Angels", "San Francisco Giants", "San Diego Padres", "Oakland Athletics"]
+    }
+  },
+  {
+    "state": "Colorado",
+    "population": 5839926,
+    "nickname": "The Centennial State",
+    "flower": "Rocky Mountain Columbine",
+    "bird": "Lark Bunting",
+    "tree": "Colorado Blue Spruce",
+    "animal": "Rocky Mountain Bighorn Sheep",
+    "rock": "Yule Marble",
+    "song": "Where the Columbines Grow",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/4/46/Flag_of_Colorado.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Seal_of_Colorado.svg",
+    "oldestRestaurant": {
+      "name": "Buckhorn Exchange",
+      "city": "Denver"
+    },
+    "sports": {
+      "nba": ["Denver Nuggets"],
+      "nfl": ["Denver Broncos"],
+      "mlb": ["Colorado Rockies"]
+    }
+  },
+  {
+    "state": "Connecticut",
+    "population": 3626080,
+    "nickname": "The Constitution State",
+    "flower": "Mountain Laurel",
+    "bird": "American Robin",
+    "tree": "White Oak",
+    "animal": "Sperm Whale",
+    "rock": "Garnet",
+    "song": "Yankee Doodle",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/Flag_of_Connecticut.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Seal_of_Connecticut.svg",
+    "oldestRestaurant": {
+      "name": "Griswold Inn",
+      "city": "Essex"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Delaware",
+    "population": 1018396,
+    "nickname": "The First State",
+    "flower": "Peach Blossom",
+    "bird": "Blue Hen Chicken",
+    "tree": "American Holly",
+    "animal": "Grey Fox",
+    "rock": "Sillimanite",
+    "song": "Our Delaware",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Flag_of_Delaware.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Seal_of_Delaware.svg",
+    "oldestRestaurant": {
+      "name": "Kelly's Logan House",
+      "city": "Wilmington"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Florida",
+    "population": 22244823,
+    "nickname": "The Sunshine State",
+    "flower": "Orange Blossom",
+    "bird": "Mockingbird",
+    "tree": "Sabal Palm",
+    "animal": "Florida Panther",
+    "rock": "Agatized Coral",
+    "song": "Old Folks at Home",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Florida.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Seal_of_Florida.svg",
+    "oldestRestaurant": {
+      "name": "Columbia Restaurant",
+      "city": "Tampa"
+    },
+    "sports": {
+      "nba": ["Miami Heat", "Orlando Magic"],
+      "nfl": ["Miami Dolphins", "Tampa Bay Buccaneers", "Jacksonville Jaguars"],
+      "mlb": ["Miami Marlins", "Tampa Bay Rays"]
+    }
+  },
+  {
+    "state": "Georgia",
+    "population": 10912876,
+    "nickname": "The Peach State",
+    "flower": "Cherokee Rose",
+    "bird": "Brown Thrasher",
+    "tree": "Southern Live Oak",
+    "animal": "Right Whale",
+    "rock": "Staurolite",
+    "song": "Georgia on My Mind",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Flag_of_the_State_of_Georgia.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Seal_of_Georgia.svg",
+    "oldestRestaurant": {
+      "name": "Plaza Restaurant & Oyster Bar",
+      "city": "Thomasville"
+    },
+    "sports": {
+      "nba": ["Atlanta Hawks"],
+      "nfl": ["Atlanta Falcons"],
+      "mlb": ["Atlanta Braves"]
+    }
+  },
+  {
+    "state": "Hawaii",
+    "population": 1440196,
+    "nickname": "The Aloha State",
+    "flower": "Hawaiian Hibiscus",
+    "bird": "Nene (Hawaiian Goose)",
+    "tree": "Kukui Tree (Candlenut)",
+    "animal": "Hawaiian Monk Seal",
+    "rock": "Black Coral",
+    "song": "Hawaii Ponoi",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Flag_of_Hawaii.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Seal_of_the_State_of_Hawaii.svg",
+    "oldestRestaurant": {
+      "name": "Manago Hotel Restaurant",
+      "city": "Captain Cook"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Idaho",
+    "population": 1939033,
+    "nickname": "The Gem State",
+    "flower": "Syringa",
+    "bird": "Mountain Bluebird",
+    "tree": "Western White Pine",
+    "animal": "Appaloosa Horse",
+    "rock": "Star Garnet",
+    "song": "Here We Have Idaho",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_Idaho.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Seal_of_Idaho.svg",
+    "oldestRestaurant": {
+      "name": "The Snake Pit",
+      "city": "Enaville"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Illinois",
+    "population": 12582032,
+    "nickname": "The Prairie State",
+    "flower": "Violet",
+    "bird": "Northern Cardinal",
+    "tree": "White Oak",
+    "animal": "White-tailed Deer",
+    "rock": "Fluorite",
+    "song": "Illinois",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Illinois.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Seal_of_Illinois.svg",
+    "oldestRestaurant": {
+      "name": "Village Tavern",
+      "city": "Long Grove"
+    },
+    "sports": {
+      "nba": ["Chicago Bulls"],
+      "nfl": ["Chicago Bears"],
+      "mlb": ["Chicago Cubs", "Chicago White Sox"]
+    }
+  },
+  {
+    "state": "Indiana",
+    "population": 6833037,
+    "nickname": "The Hoosier State",
+    "flower": "Peony",
+    "bird": "Northern Cardinal",
+    "tree": "Tulip Tree",
+    "animal": "None (Official State Insect: Say's Firefly)",
+    "rock": "Limestone",
+    "song": "On the Banks of the Wabash, Far Away",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Flag_of_Indiana.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Seal_of_Indiana.svg",
+    "oldestRestaurant": {
+      "name": "The Log Inn",
+      "city": "Haubstadt"
+    },
+    "sports": {
+      "nba": ["Indiana Pacers"],
+      "nfl": ["Indianapolis Colts"],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Iowa",
+    "population": 3200517,
+    "nickname": "The Hawkeye State",
+    "flower": "Wild Prairie Rose",
+    "bird": "Eastern Goldfinch",
+    "tree": "Bur Oak",
+    "animal": "None",
+    "rock": "Geode",
+    "song": "The Song of Iowa",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Flag_of_Iowa.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/State_seal_of_Iowa.svg",
+    "oldestRestaurant": {
+      "name": "Breitbach's Country Dining",
+      "city": "Balltown"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Kansas",
+    "population": 2937150,
+    "nickname": "The Sunflower State",
+    "flower": "Sunflower",
+    "bird": "Western Meadowlark",
+    "tree": "Eastern Cottonwood",
+    "animal": "American Bison",
+    "rock": "None",
+    "song": "Home on the Range",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Flag_of_Kansas.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Seal_of_Kansas.svg",
+    "oldestRestaurant": {
+      "name": "Hays House",
+      "city": "Council Grove"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Kentucky",
+    "population": 4512310,
+    "nickname": "The Bluegrass State",
+    "flower": "Goldenrod",
+    "bird": "Northern Cardinal",
+    "tree": "Tulip Poplar",
+    "animal": "Thoroughbred Horse",
+    "rock": "Kentucky Agate",
+    "song": "My Old Kentucky Home",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Flag_of_Kentucky.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/Seal_of_Kentucky.svg",
+    "oldestRestaurant": {
+      "name": "Old Talbott Tavern",
+      "city": "Bardstown"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Louisiana",
+    "population": 4590241,
+    "nickname": "The Pelican State",
+    "flower": "Magnolia",
+    "bird": "Brown Pelican",
+    "tree": "Bald Cypress",
+    "animal": "Black Bear",
+    "rock": "Agate",
+    "song": "You Are My Sunshine",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Flag_of_Louisiana.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Seal_of_Louisiana.svg",
+    "oldestRestaurant": {
+      "name": "Antoine's",
+      "city": "New Orleans"
+    },
+    "sports": {
+      "nba": ["New Orleans Pelicans"],
+      "nfl": ["New Orleans Saints"],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Maine",
+    "population": 1385340,
+    "nickname": "The Pine Tree State",
+    "flower": "White Pine Cone and Tassel",
+    "bird": "Black-capped Chickadee",
+    "tree": "Eastern White Pine",
+    "animal": "Moose",
+    "rock": "None",
+    "song": "State of Maine Song",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Flag_of_Maine.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Seal_of_Maine.svg",
+    "oldestRestaurant": {
+      "name": "Palace Diner",
+      "city": "Biddeford"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Maryland",
+    "population": 6164660,
+    "nickname": "The Old Line State",
+    "flower": "Black-eyed Susan",
+    "bird": "Baltimore Oriole",
+    "tree": "White Oak",
+    "animal": "Chesapeake Bay Retriever",
+    "rock": "Patuxent River Stone",
+    "song": "Maryland, My Maryland",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Maryland.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Seal_of_Maryland.svg",
+    "oldestRestaurant": {
+      "name": "Middleton Tavern",
+      "city": "Annapolis"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": ["Baltimore Ravens"],
+      "mlb": ["Baltimore Orioles"]
+    }
+  },
+  {
+    "state": "Massachusetts",
+    "population": 6981974,
+    "nickname": "The Bay State",
+    "flower": "Mayflower",
+    "bird": "Black-capped Chickadee",
+    "tree": "American Elm",
+    "animal": "Morgan Horse",
+    "rock": "Roxbury Puddingstone",
+    "song": "All Hail to Massachusetts",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Massachusetts.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/4/46/Seal_of_Massachusetts.svg",
+    "oldestRestaurant": {
+      "name": "Union Oyster House",
+      "city": "Boston"
+    },
+    "sports": {
+      "nba": ["Boston Celtics"],
+      "nfl": ["New England Patriots"],
+      "mlb": ["Boston Red Sox"]
+    }
+  },
+  {
+    "state": "Michigan",
+    "population": 10034113,
+    "nickname": "The Great Lakes State",
+    "flower": "Apple Blossom",
+    "bird": "American Robin",
+    "tree": "Eastern White Pine",
+    "animal": "Wolverine",
+    "rock": "Petoskey Stone",
+    "song": "My Michigan",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Flag_of_Michigan.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Seal_of_Michigan.svg",
+    "oldestRestaurant": {
+      "name": "Sleder's Family Tavern",
+      "city": "Traverse City"
+    },
+    "sports": {
+      "nba": ["Detroit Pistons"],
+      "nfl": ["Detroit Lions"],
+      "mlb": ["Detroit Tigers"]
+    }
+  },
+  {
+    "state": "Minnesota",
+    "population": 5717184,
+    "nickname": "The North Star State",
+    "flower": "Pink and White Lady's Slipper",
+    "bird": "Common Loon",
+    "tree": "Red Pine",
+    "animal": "None",
+    "rock": "Lake Superior Agate",
+    "song": "Hail! Minnesota",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/Flag_of_Minnesota.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_Minnesota.svg",
+    "oldestRestaurant": {
+      "name": "Hubbell House",
+      "city": "Mantorville"
+    },
+    "sports": {
+      "nba": ["Minnesota Timberwolves"],
+      "nfl": ["Minnesota Vikings"],
+      "mlb": ["Minnesota Twins"]
+    }
+  },
+  {
+    "state": "Mississippi",
+    "population": 2940057,
+    "nickname": "The Magnolia State",
+    "flower": "Magnolia",
+    "bird": "Mockingbird",
+    "tree": "Magnolia Tree",
+    "animal": "White-tailed Deer",
+    "rock": "Petrified Wood",
+    "song": "Go, Mississippi",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Flag_of_Mississippi.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Seal_of_Mississippi.svg",
+    "oldestRestaurant": {
+      "name": "Weidmann's",
+      "city": "Meridian"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Missouri",
+    "population": 6177957,
+    "nickname": "The Show-Me State",
+    "flower": "Hawthorn Blossom",
+    "bird": "Eastern Bluebird",
+    "tree": "Flowering Dogwood",
+    "animal": "Missouri Mule",
+    "rock": "Mozarkite",
+    "song": "Missouri Waltz",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Flag_of_Missouri.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/b/be/Seal_of_Missouri.svg",
+    "oldestRestaurant": {
+      "name": "J. Huston Tavern",
+      "city": "Arrow Rock"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": ["Kansas City Chiefs"],
+      "mlb": ["Kansas City Royals", "St. Louis Cardinals"]
+    }
+  },
+  {
+    "state": "Montana",
+    "population": 1122867,
+    "nickname": "The Treasure State",
+    "flower": "Bitterroot",
+    "bird": "Western Meadowlark",
+    "tree": "Ponderosa Pine",
+    "animal": "Grizzly Bear",
+    "rock": "Agate / Sapphire",
+    "song": "Montana",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_Montana.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Great_Seal_of_Montana.svg",
+    "oldestRestaurant": {
+      "name": "Pekin Noodle Parlor",
+      "city": "Butte"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Nebraska",
+    "population": 1967923,
+    "nickname": "The Cornhusker State",
+    "flower": "Goldenrod",
+    "bird": "Western Meadowlark",
+    "tree": "Eastern Cottonwood",
+    "animal": "White-tailed Deer",
+    "rock": "Prairie Agate",
+    "song": "Beautiful Nebraska",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Flag_of_Nebraska.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Seal_of_Nebraska.svg",
+    "oldestRestaurant": {
+      "name": "Glur's Tavern",
+      "city": "Columbus"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Nevada",
+    "population": 3177772,
+    "nickname": "The Silver State",
+    "flower": "Sagebrush",
+    "bird": "Mountain Bluebird",
+    "tree": "Single-leaf Pinyon Pine",
+    "animal": "Desert Bighorn Sheep",
+    "rock": "Sandstone",
+    "song": "Home Means Nevada",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Flag_of_Nevada.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Seal_of_Nevada.svg",
+    "oldestRestaurant": {
+      "name": "Genoa Bar and Saloon",
+      "city": "Genoa"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": ["Las Vegas Raiders"],
+      "mlb": []
+    }
+  },
+  {
+    "state": "New Hampshire",
+    "population": 1395231,
+    "nickname": "The Granite State",
+    "flower": "Purple Lilac",
+    "bird": "Purple Finch",
+    "tree": "White Birch",
+    "animal": "White-tailed Deer",
+    "rock": "Granite",
+    "song": "Old New Hampshire",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/2/28/Flag_of_New_Hampshire.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Seal_of_New_Hampshire.svg",
+    "oldestRestaurant": {
+      "name": "Hancock Inn",
+      "city": "Hancock"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "New Jersey",
+    "population": 9288994,
+    "nickname": "The Garden State",
+    "flower": "Violet",
+    "bird": "Eastern Goldfinch",
+    "tree": "Red Oak",
+    "animal": "The Horse",
+    "rock": "None",
+    "song": "I'm From New Jersey",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_New_Jersey.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Seal_of_New_Jersey.svg",
+    "oldestRestaurant": {
+      "name": "Cranbury Inn",
+      "city": "Cranbury"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": ["New York Giants", "New York Jets"],
+      "mlb": []
+    }
+  },
+  {
+    "state": "New Mexico",
+    "population": 2113344,
+    "nickname": "The Land of Enchantment",
+    "flower": "Yucca Flower",
+    "bird": "Greater Roadrunner",
+    "tree": "Piñon Pine",
+    "animal": "Black Bear",
+    "rock": "Turquoise",
+    "song": "O Fair New Mexico",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_New_Mexico.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/Seal_of_New_Mexico.svg",
+    "oldestRestaurant": {
+      "name": "El Farol",
+      "city": "Santa Fe"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "New York",
+    "population": 19677151,
+    "nickname": "The Empire State",
+    "flower": "Rose",
+    "bird": "Eastern Bluebird",
+    "tree": "Sugar Maple",
+    "animal": "Beaver",
+    "rock": "Garnet",
+    "song": "I Love New York",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_New_York.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/Seal_of_New_York.svg",
+    "oldestRestaurant": {
+      "name": "'76 House",
+      "city": "Tappan"
+    },
+    "sports": {
+      "nba": ["New York Knicks", "Brooklyn Nets"],
+      "nfl": ["Buffalo Bills"],
+      "mlb": ["New York Yankees", "New York Mets"]
+    }
+  },
+  {
+    "state": "North Carolina",
+    "population": 10698973,
+    "nickname": "The Tar Heel State",
+    "flower": "Flowering Dogwood",
+    "bird": "Northern Cardinal",
+    "tree": "Pine Tree",
+    "animal": "Eastern Gray Squirrel",
+    "rock": "Granite",
+    "song": "The Old North State",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Flag_of_North_Carolina.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Seal_of_North_Carolina.svg",
+    "oldestRestaurant": {
+      "name": "Carolina Coffee Shop",
+      "city": "Chapel Hill"
+    },
+    "sports": {
+      "nba": ["Charlotte Hornets"],
+      "nfl": ["Carolina Panthers"],
+      "mlb": []
+    }
+  },
+  {
+    "state": "North Dakota",
+    "population": 779261,
+    "nickname": "The Peace Garden State",
+    "flower": "Wild Prairie Rose",
+    "bird": "Western Meadowlark",
+    "tree": "American Elm",
+    "animal": "Nokota Horse",
+    "rock": "None",
+    "song": "North Dakota Hymn",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Flag_of_North_Dakota.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Great_Seal_of_North_Dakota.svg",
+    "oldestRestaurant": {
+      "name": "Peacock Alley American Grill",
+      "city": "Bismarck"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Ohio",
+    "population": 11756058,
+    "nickname": "The Buckeye State",
+    "flower": "Scarlet Carnation",
+    "bird": "Northern Cardinal",
+    "tree": "Ohio Buckeye",
+    "animal": "White-tailed Deer",
+    "rock": "Ohio Flint",
+    "song": "Beautiful Ohio",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Ohio.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/Seal_of_Ohio.svg",
+    "oldestRestaurant": {
+      "name": "Golden Lamb",
+      "city": "Lebanon"
+    },
+    "sports": {
+      "nba": ["Cleveland Cavaliers"],
+      "nfl": ["Cincinnati Bengals", "Cleveland Browns"],
+      "mlb": ["Cincinnati Reds", "Cleveland Guardians"]
+    }
+  },
+  {
+    "state": "Oklahoma",
+    "population": 4019800,
+    "nickname": "The Sooner State",
+    "flower": "Oklahoma Rose",
+    "bird": "Scissor-tailed Flycatcher",
+    "tree": "Redbud",
+    "animal": "American Bison",
+    "rock": "Rose Rock",
+    "song": "Oklahoma",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Flag_of_Oklahoma.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Seal_of_Oklahoma.svg",
+    "oldestRestaurant": {
+      "name": "Cattlemen's Steakhouse",
+      "city": "Oklahoma City"
+    },
+    "sports": {
+      "nba": ["Oklahoma City Thunder"],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Oregon",
+    "population": 4240137,
+    "nickname": "The Beaver State",
+    "flower": "Oregon Grape",
+    "bird": "Western Meadowlark",
+    "tree": "Douglas Fir",
+    "animal": "American Beaver",
+    "rock": "Thunderegg",
+    "song": "Oregon, My Oregon",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flag_of_Oregon.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Seal_of_Oregon.svg",
+    "oldestRestaurant": {
+      "name": "Huber's Cafe",
+      "city": "Portland"
+    },
+    "sports": {
+      "nba": ["Portland Trail Blazers"],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Pennsylvania",
+    "population": 12972008,
+    "nickname": "The Keystone State",
+    "flower": "Mountain Laurel",
+    "bird": "Ruffed Grouse",
+    "tree": "Eastern Hemlock",
+    "animal": "White-tailed Deer",
+    "rock": "None",
+    "song": "Pennsylvania",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Pennsylvania.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Seal_of_Pennsylvania.svg",
+    "oldestRestaurant": {
+      "name": "Revere Tavern",
+      "city": "Paradise"
+    },
+    "sports": {
+      "nba": ["Philadelphia 76ers"],
+      "nfl": ["Philadelphia Eagles", "Pittsburgh Steelers"],
+      "mlb": ["Philadelphia Phillies", "Pittsburgh Pirates"]
+    }
+  },
+  {
+    "state": "Rhode Island",
+    "population": 1093734,
+    "nickname": "The Ocean State",
+    "flower": "Violet",
+    "bird": "Rhode Island Red Chicken",
+    "tree": "Red Maple",
+    "animal": "None",
+    "rock": "Cumberlandite",
+    "song": "Rhode Island, It's For Me",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Rhode_Island.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Seal_of_Rhode_Island_(2021).svg",
+    "oldestRestaurant": {
+      "name": "White Horse Tavern",
+      "city": "Newport"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "South Carolina",
+    "population": 5282634,
+    "nickname": "The Palmetto State",
+    "flower": "Yellow Jessamine",
+    "bird": "Carolina Wren",
+    "tree": "Sabal Palmetto",
+    "animal": "White-tailed Deer",
+    "rock": "Blue Granite",
+    "song": "Carolina",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Flag_of_South_Carolina.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Seal_of_South_Carolina.svg",
+    "oldestRestaurant": {
+      "name": "Villa Tronco",
+      "city": "Columbia"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "South Dakota",
+    "population": 909824,
+    "nickname": "The Mount Rushmore State",
+    "flower": "Pasque Flower",
+    "bird": "Ring-necked Pheasant",
+    "tree": "White Spruce",
+    "animal": "Coyote",
+    "rock": "Fairburn Agate",
+    "song": "Hail! South Dakota",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_South_Dakota.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/State_Seal_of_South_Dakota.svg",
+    "oldestRestaurant": {
+      "name": "Legends Steakhouse",
+      "city": "Deadwood"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Tennessee",
+    "population": 7051339,
+    "nickname": "The Volunteer State",
+    "flower": "Iris",
+    "bird": "Mockingbird",
+    "tree": "Tulip Poplar",
+    "animal": "Raccoon",
+    "rock": "Agate",
+    "song": "Tennessee Waltz",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Tennessee.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Seal_of_Tennessee.svg",
+    "oldestRestaurant": {
+      "name": "Varallo's Restaurant",
+      "city": "Nashville"
+    },
+    "sports": {
+      "nba": ["Memphis Grizzlies"],
+      "nfl": ["Tennessee Titans"],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Texas",
+    "population": 30029572,
+    "nickname": "The Lone Star State",
+    "flower": "Bluebonnet",
+    "bird": "Mockingbird",
+    "tree": "Pecan Tree",
+    "animal": "Longhorn Cattle",
+    "rock": "Petrified Palmwood",
+    "song": "Texas, Our Texas",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Seal_of_Texas.svg",
+    "oldestRestaurant": {
+      "name": "Scholz Garten",
+      "city": "Austin"
+    },
+    "sports": {
+      "nba": ["Dallas Mavericks", "Houston Rockets", "San Antonio Spurs"],
+      "nfl": ["Dallas Cowboys", "Houston Texans"],
+      "mlb": ["Houston Astros", "Texas Rangers"]
+    }
+  },
+  {
+    "state": "Utah",
+    "population": 3380800,
+    "nickname": "The Beehive State",
+    "flower": "Sego Lily",
+    "bird": "California Gull",
+    "tree": "Quaking Aspen",
+    "animal": "Rocky Mountain Elk",
+    "rock": "Coal",
+    "song": "Utah, We Love Thee",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Utah.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Seal_of_Utah.svg",
+    "oldestRestaurant": {
+      "name": "Snappy Service",
+      "city": "Ogden"
+    },
+    "sports": {
+      "nba": ["Utah Jazz"],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Vermont",
+    "population": 647064,
+    "nickname": "The Green Mountain State",
+    "flower": "Red Clover",
+    "bird": "Hermit Thrush",
+    "tree": "Sugar Maple",
+    "animal": "Morgan Horse",
+    "rock": "Granite / Marble / Slate",
+    "song": "These Green Mountains",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Vermont.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Seal_of_Vermont.svg",
+    "oldestRestaurant": {
+      "name": "Ye Olde Tavern",
+      "city": "Manchester"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Virginia",
+    "population": 8683619,
+    "nickname": "The Old Dominion",
+    "flower": "Flowering Dogwood",
+    "bird": "Northern Cardinal",
+    "tree": "American Dogwood",
+    "animal": "Virginia Big-eared Bat",
+    "rock": "Nelsonite",
+    "song": "Our Great Virginia",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/Flag_of_Virginia.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/State_Seal_of_Virginia.svg",
+    "oldestRestaurant": {
+      "name": "Red Fox Inn & Tavern",
+      "city": "Middleburg"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Washington",
+    "population": 7785786,
+    "nickname": "The Evergreen State",
+    "flower": "Coast Rhododendron",
+    "bird": "American Goldfinch",
+    "tree": "Western Hemlock",
+    "animal": "Olympic Marmot",
+    "rock": "Petrified Wood",
+    "song": "Washington, My Home",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Flag_of_Washington.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Seal_of_Washington.svg",
+    "oldestRestaurant": {
+      "name": "Horseshoe Cafe",
+      "city": "Bellingham"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": ["Seattle Seahawks"],
+      "mlb": ["Seattle Mariners"]
+    }
+  },
+  {
+    "state": "West Virginia",
+    "population": 1775156,
+    "nickname": "The Mountain State",
+    "flower": "Rhododendron",
+    "bird": "Northern Cardinal",
+    "tree": "Sugar Maple",
+    "animal": "Black Bear",
+    "rock": "Bituminous Coal",
+    "song": "The West Virginia Hills",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/2/22/Flag_of_West_Virginia.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Seal_of_West_Virginia.svg",
+    "oldestRestaurant": {
+      "name": "North End Tavern & Brewery",
+      "city": "Parkersburg"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Wisconsin",
+    "population": 5892539,
+    "nickname": "The Badger State",
+    "flower": "Wood Violet",
+    "bird": "American Robin",
+    "tree": "Sugar Maple",
+    "animal": "Badger",
+    "rock": "Red Granite",
+    "song": "On, Wisconsin!",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/2/22/Flag_of_Wisconsin.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/9/99/Seal_of_Wisconsin.svg",
+    "oldestRestaurant": {
+      "name": "Red Circle Inn",
+      "city": "Nashotah"
+    },
+    "sports": {
+      "nba": ["Milwaukee Bucks"],
+      "nfl": ["Green Bay Packers"],
+      "mlb": ["Milwaukee Brewers"]
+    }
+  },
+  {
+    "state": "Wyoming",
+    "population": 581381,
+    "nickname": "The Equality State",
+    "flower": "Indian Paintbrush",
+    "bird": "Western Meadowlark",
+    "tree": "Plains Cottonwood",
+    "animal": "American Bison",
+    "rock": "Jade",
+    "song": "Wyoming",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Wyoming.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/9/98/Seal_of_Wyoming.svg",
+    "oldestRestaurant": {
+      "name": "Miners and Stockman's Steakhouse",
+      "city": "Hartville"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "American Samoa",
+    "population": 49710,
+    "nickname": "Motu o Fiafiaga (Islands of Paradise)",
+    "flower": "Paogo (Ula Fruit)",
+    "bird": "Lupe (Pacific Pigeon)",
+    "tree": "Coconut Palm",
+    "animal": "Fruit Bat (Peka)",
+    "rock": "Basalt",
+    "song": "Amerika Samoa",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Flag_of_American_Samoa.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Seal_of_American_Samoa.svg",
+    "oldestRestaurant": {
+      "name": "Tanoa Fales",
+      "city": "Pago Pago"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Guam",
+    "population": 153836,
+    "nickname": "Where America's Day Begins",
+    "flower": "Bougainvillea (Puti Tai Nobiu)",
+    "bird": "Ko'ko' (Guam Rail)",
+    "tree": "Ifit (Intsia bijuga)",
+    "animal": "Carabao",
+    "rock": "Limestone",
+    "song": "Stand Ye Guamanians",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Flag_of_Guam.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Seal_of_Guam.svg",
+    "oldestRestaurant": {
+      "name": "Shirley's Coffee Shop",
+      "city": "Hagåtña"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Northern Mariana Islands",
+    "population": 47329,
+    "nickname": "America's Memorial in the Pacific",
+    "flower": "Flores Mayo (Plumeria)",
+    "bird": "Marianas Fruit Dove (Totot)",
+    "tree": "Flame Tree",
+    "animal": "Mariana Fruit Bat",
+    "rock": "Limestone",
+    "song": "Gi Talo Gi Halom Tasi",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Flag_of_the_Northern_Mariana_Islands.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Seal_of_the_Northern_Mariana_Islands.svg",
+    "oldestRestaurant": {
+      "name": "The Shack Saipan",
+      "city": "Saipan"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "Puerto Rico",
+    "population": 3221789,
+    "nickname": "La Isla del Encanto (The Island of Enchantment)",
+    "flower": "Flor de Maga",
+    "bird": "Reina Mora",
+    "tree": "Ceiba (Kapok Tree)",
+    "animal": "Coquí (Tree Frog)",
+    "rock": "Serpentine",
+    "song": "La Borinqueña",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/2/28/Flag_of_Puerto_Rico.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Seal_of_Puerto_Rico.svg",
+    "oldestRestaurant": {
+      "name": "La Mallorca",
+      "city": "Old San Juan"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
+  },
+  {
+    "state": "US Virgin Islands",
+    "population": 87146,
+    "nickname": "America's Paradise",
+    "flower": "Yellow Cedar",
+    "bird": "Bananaquit",
+    "tree": "Calabash Tree",
+    "animal": "White-tailed Deer",
+    "rock": "Volcanic Rock",
+    "song": "Virgin Islands March",
+    "flagUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Flag_of_the_United_States_Virgin_Islands.svg",
+    "sealUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/Seal_of_the_United_States_Virgin_Islands.svg",
+    "oldestRestaurant": {
+      "name": "Gladys' Cafe",
+      "city": "Charlotte Amalie"
+    },
+    "sports": {
+      "nba": [],
+      "nfl": [],
+      "mlb": []
+    }
   }
 ];
 
@@ -806,13 +2165,95 @@ const initialGameState = {
   quizStep: 'mode-select',
   capitolChoices: [],
   universityChoices: [],
+  factsChoices: [],
+  factsQuestionText: '',
+  factsCorrectAnswer: '',
+  factsCategory: '',
+  flagChoices: [],
+  flagCorrectAnswer: '',
+  flagIsSeal: false,
   selectedAnswer: null,
   firstQuestionPassed: null,
   lastFeedback: null,
 };
 
+const territoriesList = [
+  {
+    id: "AS",
+    name: "American Samoa",
+    map: (
+      <svg viewBox="0 0 100 60" className="w-20 h-12 text-teal-400 fill-teal-500/10 stroke-current stroke-[1.5] transition-all duration-300 group-hover:fill-teal-500/20">
+        {/* Tutuila */}
+        <path d="M 10,25 C 20,20 28,30 38,26 C 45,22 55,24 60,30 C 65,24 72,26 78,32 C 85,28 92,34 90,38 C 84,40 76,36 68,34 C 60,32 50,36 42,34 C 32,32 22,36 12,28 Z" />
+        {/* Aunu'u */}
+        <circle cx="94" cy="38" r="1.5" className="fill-teal-400" />
+        {/* Ofu & Olosega */}
+        <path d="M 75,12 C 78,12 80,15 77,16 Z" />
+        {/* Ta'u */}
+        <circle cx="86" cy="14" r="2.2" />
+      </svg>
+    )
+  },
+  {
+    id: "GU",
+    name: "Guam",
+    map: (
+      <svg viewBox="0 0 60 100" className="w-12 h-18 text-teal-400 fill-teal-500/10 stroke-current stroke-[1.5] transition-all duration-300 group-hover:fill-teal-500/20">
+        <path d="M 32,15 C 38,18 42,28 40,40 C 37,50 34,58 36,68 C 38,78 34,84 28,82 C 24,80 22,70 24,60 C 26,50 22,38 24,28 C 26,18 28,15 32,15 Z" />
+      </svg>
+    )
+  },
+  {
+    id: "MP",
+    name: "Northern Mariana Islands",
+    map: (
+      <svg viewBox="0 0 60 100" className="w-12 h-18 text-teal-400 fill-teal-500/10 stroke-current stroke-[1.5] transition-all duration-300 group-hover:fill-teal-500/20">
+        {/* Saipan */}
+        <path d="M 42,22 C 46,20 48,28 44,34 C 41,38 39,35 42,22 Z" />
+        {/* Tinian */}
+        <path d="M 39,42 C 42,42 41,48 38,50 C 36,48 36,44 39,42 Z" />
+        {/* Rota */}
+        <path d="M 24,68 C 29,66 32,70 28,73 C 24,73 22,70 24,68 Z" />
+        {/* Small islands chain helper dashed line */}
+        <path d="M 42,22 L 25,10" className="stroke-dashed stroke-[0.8] opacity-35" />
+        <circle cx="25" cy="10" r="1.5" />
+      </svg>
+    )
+  },
+  {
+    id: "PR",
+    name: "Puerto Rico",
+    map: (
+      <svg viewBox="0 0 120 60" className="w-24 h-12 text-teal-400 fill-teal-500/10 stroke-current stroke-[1.5] transition-all duration-300 group-hover:fill-teal-500/20">
+        {/* Main Island */}
+        <path d="M 12,22 L 88,22 C 92,26 90,34 88,38 L 12,38 C 10,34 8,26 12,22 Z" />
+        {/* Culebra */}
+        <path d="M 98,24 C 101,23 102,26 99,27 Z" />
+        {/* Vieques */}
+        <path d="M 96,35 C 102,34 104,37 98,38 Z" />
+      </svg>
+    )
+  },
+  {
+    id: "VI",
+    name: "U.S. Virgin Islands",
+    map: (
+      <svg viewBox="0 0 100 80" className="w-20 h-16 text-teal-400 fill-teal-500/10 stroke-current stroke-[1.5] transition-all duration-300 group-hover:fill-teal-500/20">
+        {/* St. Thomas */}
+        <path d="M 15,22 C 22,20 28,24 35,22 C 32,25 22,26 15,22 Z" />
+        {/* St. John */}
+        <path d="M 42,23 C 46,21 48,25 45,26 Z" />
+        {/* St. Croix */}
+        <path d="M 25,55 C 45,51 60,54 55,58 C 40,60 30,58 25,55 Z" />
+      </svg>
+    )
+  }
+];
+
 function App() {
   const [game, setGame] = React.useState(initialGameState);
+  const [activeTab, setActiveTab] = React.useState('facts');
+  const [enlargedImage, setEnlargedImage] = React.useState(null);
 
   // Active state data lookup
   const activeState = React.useMemo(() => {
@@ -820,12 +2261,20 @@ function App() {
     return statesData.find(s => s.id === game.selectedStateId) || null;
   }, [game.selectedStateId]);
 
+  // Active state facts lookup
+  const activeFacts = React.useMemo(() => {
+    if (!activeState) return null;
+    return statesFactsData.find(f => f.state.toLowerCase() === activeState.name.toLowerCase()) || null;
+  }, [activeState]);
+
   // Click on a state on the map
   const handleStateClick = (stateId: string) => {
     const state = statesData.find(s => s.id === stateId);
     if (!state) return;
 
-    // Reset current quiz attempt for the clicked state
+    // Reset current quiz attempt for the clicked state and reset active tab to facts
+    setActiveTab('facts');
+    setEnlargedImage(null);
     setGame(prev => ({
       ...prev,
       selectedStateId: stateId,
@@ -845,24 +2294,95 @@ function App() {
     const capChoices = shuffle([
       activeState.capitol,
       activeState.topCities[0] || 'Major City A',
-      activeState.topCities[1] || 'Major City B',
-    ]);
+      activeState.topCities[1] || 'Major City B'
+]);
 
     const uniChoices = shuffle([
       activeState.inStateUniversities[0] || 'State Univ 1',
       activeState.inStateUniversities[1] || 'State Univ 2',
-      activeState.outOfStateDistractor.name,
-    ]);
+      activeState.outOfStateDistractor.name
+]);
+
+    let fChoices = [];
+    let fQuestionText = '';
+    let fCorrectAnswer = '';
+    let fCategory = '';
+
+    let flChoices = [];
+    let flCorrectAnswer = '';
+    let flIsSeal = false;
+
+    let targetStep = 'mode-select';
+
+    if (mode === 'facts') {
+      targetStep = 'question-facts';
+      if (activeFacts) {
+        // Pick a random valid category that isn't "None"
+        const possibleCategories = ['nickname', 'bird', 'flower', 'tree', 'animal', 'rock', 'song'];
+        const validCategories = possibleCategories.filter(cat => {
+          const val = activeFacts[cat];
+          if (typeof val === 'string') {
+            return val.toLowerCase() !== 'none' && !val.toLowerCase().startsWith('none');
+          }
+          return false;
+        });
+
+        const chosenCategory = validCategories.length > 0 
+          ? validCategories[Math.floor(Math.random() * validCategories.length)]
+          : 'nickname';
+
+        fCategory = chosenCategory;
+        fCorrectAnswer = activeFacts[chosenCategory];
+
+        const questionTemplates = {
+          nickname: `What is the official nickname of the state of ${activeState.name}?`,
+          bird: `Which of these is the official state bird of ${activeState.name}?`,
+          flower: `What is the official state flower of ${activeState.name}?`,
+          tree: `What is the official state tree of ${activeState.name}?`,
+          animal: `What is the official state animal of ${activeState.name}?`,
+          rock: `What is the official state rock of ${activeState.name}?`,
+          song: `Which of these is the official state song of ${activeState.name}?`
+        };
+        fQuestionText = questionTemplates[chosenCategory] || `What is the official ${chosenCategory} of ${activeState.name}?`;
+
+        const otherStates = statesFactsData.filter(f => f.state !== activeState.name);
+        const distractorPool = otherStates
+          .map(f => f[chosenCategory])
+          .filter(val => val && val.toLowerCase() !== 'none' && !val.toLowerCase().startsWith('none') && val !== fCorrectAnswer);
+        const uniqueDistractors = Array.from(new Set(distractorPool));
+        const selectedDistractors = shuffle(uniqueDistractors).slice(0, 2);
+
+        fChoices = shuffle([fCorrectAnswer, ...selectedDistractors]);
+      }
+    } else if (mode === 'flag') {
+      targetStep = 'question-flag';
+      flIsSeal = false;
+      flCorrectAnswer = activeState.name;
+
+      const otherNames = statesFactsData.filter(f => f.state !== activeState.name).map(f => f.state);
+      const selectedDistractors = shuffle(otherNames).slice(0, 2);
+
+      flChoices = shuffle([flCorrectAnswer, ...selectedDistractors]);
+    } else {
+      targetStep = mode === 'university' ? 'question-2' : 'question-1';
+    }
 
     setGame(prev => ({
       ...prev,
       currentMode: mode,
       capitolChoices: capChoices,
       universityChoices: uniChoices,
+      factsChoices: fChoices,
+      factsQuestionText: fQuestionText,
+      factsCorrectAnswer: fCorrectAnswer,
+      factsCategory: fCategory,
+      flagChoices: flChoices,
+      flagCorrectAnswer: flCorrectAnswer,
+      flagIsSeal: flIsSeal,
       selectedAnswer: null,
       firstQuestionPassed: null,
       lastFeedback: null,
-      quizStep: mode === 'university' ? 'question-2' : 'question-1',
+      quizStep: targetStep,
     }));
   };
 
@@ -926,6 +2446,41 @@ function App() {
     }
   };
 
+  // Submit answer for Facts Quiz
+  const submitFactsAnswer = (answer: string) => {
+    if (!activeState) return;
+
+    const isCorrect = answer === game.factsCorrectAnswer;
+    const categoryName = game.factsCategory.charAt(0).toUpperCase() + game.factsCategory.slice(1);
+    
+    const feedback = {
+      isCorrect,
+      message: isCorrect ? 'Correct!' : 'Incorrect!',
+      details: isCorrect
+        ? `Great job! "${game.factsCorrectAnswer}" is indeed the official ${categoryName} of ${activeState.name}.`
+        : `Oops! The official ${categoryName} of ${activeState.name} is actually "${game.factsCorrectAnswer}".`
+    };
+
+    updateEndState(isCorrect, feedback);
+  };
+
+  // Submit answer for Flag/Seal Quiz
+  const submitFlagAnswer = (answer: string) => {
+    if (!activeState) return;
+
+    const isCorrect = answer === game.flagCorrectAnswer;
+    
+    const feedback = {
+      isCorrect,
+      message: isCorrect ? 'Correct!' : 'Incorrect!',
+      details: isCorrect
+        ? `Excellent! This is indeed the official state flag of ${activeState.name}.`
+        : `Not quite! This is actually the official state flag of ${game.flagCorrectAnswer}.`
+    };
+
+    updateEndState(isCorrect, feedback);
+  };
+
   // Finalize quiz step and record scores
   const updateEndState = (
     isCorrect: boolean, 
@@ -974,9 +2529,12 @@ function App() {
       {/* Header Bar */}
       <header className="border-b border-slate-800 bg-slate-900/60 backdrop-blur-md px-6 py-4 sticky top-0 z-10 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="bg-teal-500/10 p-2 rounded-xl border border-teal-500/30 text-teal-400">
-            <CompassIcon className="w-6 h-6 animate-pulse" />
-          </div>
+          <img 
+            src="logo.jpg" 
+            alt="William H. Chan Educational Games" 
+            className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-xl border border-teal-500/30 shadow-lg shadow-teal-500/5 animate-pulse"
+            style={{ animationDuration: '4s' }}
+          />
           <div>
             <h1 className="text-xl font-bold tracking-tight bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
               US States Explorer & Quiz
@@ -1072,6 +2630,51 @@ function App() {
               })}
             </svg>
           </div>
+
+          {/* Horizontal Divider */}
+          <div className="border-t border-slate-800/80 mt-0.5 mb-2 mx-2"></div>
+
+          {/* Territories Section */}
+          <div className="flex flex-col gap-2.5 px-4 pb-4">
+            <div>
+              <h4 className="text-xs font-black text-slate-200 uppercase tracking-wider flex items-center gap-2">
+                <span className="text-teal-400">❖</span> U.S. Territories
+              </h4>
+              <p className="text-[10px] text-slate-400 mt-0.5">Select a territory to view its facts and take quizzes in the console</p>
+            </div>
+
+            {/* Responsive Grid of 5 boxes */}
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+              {territoriesList.map((t) => {
+                const isSelected = game.selectedStateId === t.id;
+                
+                return (
+                  <button
+                    key={t.id}
+                    onClick={() => handleStateClick(t.id)}
+                    className={`group flex flex-col items-center justify-between p-3.5 rounded-xl border transition-all duration-300 min-h-[145px] outline-none ${
+                      isSelected
+                        ? 'border-teal-500 bg-teal-500/10 shadow-lg shadow-teal-500/5'
+                        : 'border-slate-850 bg-slate-900/30 hover:bg-slate-900/50 hover:border-slate-700'
+                    }`}
+                  >
+                    <div className="flex-1 flex items-center justify-center p-1">
+                      {t.map}
+                    </div>
+                    <div className="text-center mt-2 w-full">
+                      <span className="text-[11px] font-bold text-white block truncate leading-tight">
+                        {t.name}
+                      </span>
+                      <span className="text-[8px] font-black block mt-1 uppercase tracking-wider text-teal-400 leading-none">
+                        U.S. Territory
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
         </section>
 
         {/* Sidebar Quiz Panel */}
@@ -1103,137 +2706,384 @@ function App() {
                   }</p>
                 </div>
 
-                {/* Step 1: Select Quiz Mode */}
-                {game.quizStep === 'mode-select' && (
-                  <div className="flex-1 flex flex-col gap-4">
-                    <h5 className="text-sm font-semibold text-slate-300">Choose a Challenge Mode:</h5>
-                    
-                    <button
-                      onClick={() => startQuiz('capitol')}
-                      className="w-full text-left p-4 bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 hover:border-teal-500/40 rounded-xl transition-all flex items-start gap-3 group"
-                    >
-                      <div className="bg-amber-500/10 p-2 rounded-lg text-amber-400 border border-amber-500/20 group-hover:bg-amber-500/20">
-                        <Building2Icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <span className="font-bold text-sm text-slate-200 block group-hover:text-white">Option 1: Capitol Quiz</span>
-                        <span className="text-xs text-slate-400 block mt-0.5">Guess the correct official state capitol city.</span>
-                      </div>
-                    </button>
+                {/* Tabs bar */}
+                <div className="flex border-b border-slate-800 bg-slate-900/40 rounded-lg p-1">
+                  <button
+                    onClick={() => setActiveTab('facts')}
+                    className={`flex-1 py-2 text-xs font-bold rounded-md flex items-center justify-center gap-1.5 transition-all ${
+                      activeTab === 'facts'
+                        ? 'bg-slate-800 text-white shadow-sm border border-slate-700/50'
+                        : 'text-slate-400 hover:text-slate-200'
+                    }`}
+                  >
+                    <InfoIcon className="w-3.5 h-3.5" />
+                    Learn Facts
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('quiz')}
+                    className={`flex-1 py-2 text-xs font-bold rounded-md flex items-center justify-center gap-1.5 transition-all ${
+                      activeTab === 'quiz'
+                        ? 'bg-slate-800 text-white shadow-sm border border-slate-700/50'
+                        : 'text-slate-400 hover:text-slate-200'
+                    }`}
+                  >
+                    <HelpCircleIcon className="w-3.5 h-3.5" />
+                    Take Quiz
+                  </button>
+                </div>
 
-                    <button
-                      onClick={() => startQuiz('university')}
-                      className="w-full text-left p-4 bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 hover:border-teal-500/40 rounded-xl transition-all flex items-start gap-3 group"
-                    >
-                      <div className="bg-sky-500/10 p-2 rounded-lg text-sky-400 border border-sky-500/20 group-hover:bg-sky-500/20">
-                        <GraduationCapIcon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <span className="font-bold text-sm text-slate-200 block group-hover:text-white">Option 2: University Quiz</span>
-                        <span className="text-xs text-slate-400 block mt-0.5">Identify which university is out-of-state.</span>
-                      </div>
-                    </button>
-
-                    <button
-                      onClick={() => startQuiz('both')}
-                      className="w-full text-left p-4 bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 hover:border-teal-500/40 rounded-xl transition-all flex items-start gap-3 group"
-                    >
-                      <div className="bg-teal-500/10 p-2 rounded-lg text-teal-400 border border-teal-500/20 group-hover:bg-teal-500/20">
-                        <BookOpenIcon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <span className="font-bold text-sm text-slate-200 block group-hover:text-white">Combined: Both Quizzes</span>
-                        <span className="text-xs text-slate-400 block mt-0.5">Test your skills on both capitols and colleges!</span>
-                      </div>
-                    </button>
-                  </div>
-                )}
-
-                {/* Step 2: Capitol Quiz (Question 1) */}
-                {game.quizStep === 'question-1' && (
-                  <div className="flex-1 flex flex-col gap-4">
-                    <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-800">
-                      <span className="text-[10px] uppercase font-bold text-amber-400 tracking-wider">Question 1: State Capitol</span>
-                      <p className="text-sm font-semibold text-slate-200 mt-1">
-                        Which of these is the official Capitol of <span className="text-white underline decoration-teal-400">{activeState.name}</span>?
-                      </p>
-                      <p className="text-xs text-slate-400 mt-2">
-                        Hint: Distractor cities include large metropolitan zones like {activeState.topCities.slice(0, 2).join(' and ')}.
-                      </p>
-                    </div>
-
-                    <div className="flex flex-col gap-2.5">
-                      {game.capitolChoices.map((choice) => (
-                        <button
-                          key={choice}
-                          onClick={() => submitCapitolAnswer(choice)}
-                          className="w-full py-3 px-4 bg-slate-800 hover:bg-slate-700 active:bg-slate-650 rounded-xl border border-slate-700 text-left text-sm font-semibold hover:text-white transition-all"
+                {/* Learn Facts Tab Content */}
+                {activeTab === 'facts' && activeFacts && (
+                  <div className="flex-1 flex flex-col gap-5 animate-fadeIn">
+                    {/* Flag Container */}
+                    <div className="flex flex-col items-center justify-center bg-slate-800/20 p-4 rounded-xl border border-slate-800/80">
+                      <div className="w-full max-w-[240px] flex flex-col items-center gap-1.5">
+                        <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">State Flag</span>
+                        <div 
+                          onClick={() => setEnlargedImage({ url: activeFacts.flagUrl, title: `${activeState.name} State Flag` })}
+                          className="w-full h-24 rounded-md overflow-hidden border border-slate-700/50 bg-slate-900/50 flex items-center justify-center p-1 cursor-zoom-in hover:scale-105 hover:border-teal-500/50 transition-all duration-300 group relative"
                         >
-                          {choice}
-                        </button>
-                      ))}
+                          <img 
+                            src={activeFacts.flagUrl} 
+                            alt={`${activeState.name} flag`} 
+                            className="max-w-full max-h-full object-contain shadow-sm"
+                            referrerPolicy="no-referrer"
+                          />
+                          <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-200">
+                            <span className="text-[9px] font-bold text-white bg-slate-900/80 px-1.5 py-0.5 rounded border border-slate-700/50">Zoom</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Nickname & Demographics */}
+                    <div className="bg-gradient-to-r from-amber-500/10 to-yellow-500/5 p-4 rounded-xl border border-amber-500/20">
+                      <div className="text-[10px] text-amber-400 font-bold uppercase tracking-wider">State Nickname</div>
+                      <div className="text-lg font-black text-white italic mt-0.5">"{activeFacts.nickname}"</div>
+                      <div className="mt-3 pt-3 border-t border-slate-800/60 flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-slate-300">
+                          <UsersIcon className="w-4 h-4 text-amber-500" />
+                          <span className="text-xs font-semibold">Population</span>
+                        </div>
+                        <span className="text-sm font-bold text-white">{activeFacts.population.toLocaleString()}</span>
+                      </div>
+                    </div>
+
+                    {/* Symbols Grid */}
+                    <div className="flex flex-col gap-2">
+                      <h5 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Official State Symbols</h5>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-slate-800/30 p-2.5 rounded-lg border border-slate-800/60 flex items-center gap-2">
+                          <span className="text-xl">🌸</span>
+                          <div className="overflow-hidden">
+                            <span className="text-[8px] text-slate-400 block font-bold uppercase">Flower</span>
+                            <span className="text-xs text-white font-semibold truncate block" title={activeFacts.flower}>{activeFacts.flower}</span>
+                          </div>
+                        </div>
+                        <div className="bg-slate-800/30 p-2.5 rounded-lg border border-slate-800/60 flex items-center gap-2">
+                          <span className="text-xl">🐦</span>
+                          <div className="overflow-hidden">
+                            <span className="text-[8px] text-slate-400 block font-bold uppercase">Bird</span>
+                            <span className="text-xs text-white font-semibold truncate block" title={activeFacts.bird}>{activeFacts.bird}</span>
+                          </div>
+                        </div>
+                        <div className="bg-slate-800/30 p-2.5 rounded-lg border border-slate-800/60 flex items-center gap-2">
+                          <span className="text-xl">🌲</span>
+                          <div className="overflow-hidden">
+                            <span className="text-[8px] text-slate-400 block font-bold uppercase">Tree</span>
+                            <span className="text-xs text-white font-semibold truncate block" title={activeFacts.tree}>{activeFacts.tree}</span>
+                          </div>
+                        </div>
+                        <div className="bg-slate-800/30 p-2.5 rounded-lg border border-slate-800/60 flex items-center gap-2">
+                          <span className="text-xl">🐻</span>
+                          <div className="overflow-hidden">
+                            <span className="text-[8px] text-slate-400 block font-bold uppercase">Animal</span>
+                            <span className="text-xs text-white font-semibold truncate block" title={activeFacts.animal}>{activeFacts.animal}</span>
+                          </div>
+                        </div>
+                        <div className="bg-slate-800/30 p-2.5 rounded-lg border border-slate-800/60 flex items-center gap-2">
+                          <span className="text-xl">🪨</span>
+                          <div className="overflow-hidden">
+                            <span className="text-[8px] text-slate-400 block font-bold uppercase">Rock</span>
+                            <span className="text-xs text-white font-semibold truncate block" title={activeFacts.rock}>{activeFacts.rock}</span>
+                          </div>
+                        </div>
+                        <div className="bg-slate-800/30 p-2.5 rounded-lg border border-slate-800/60 flex items-center gap-2">
+                          <span className="text-xl">🎵</span>
+                          <div className="overflow-hidden">
+                            <span className="text-[8px] text-slate-400 block font-bold uppercase">Song</span>
+                            <span className="text-xs text-white font-semibold truncate block" title={activeFacts.song}>{activeFacts.song}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Culture & Sports Cards */}
+                    <div className="flex flex-col gap-3">
+                      {/* Oldest Restaurant */}
+                      <div className="bg-slate-800/30 p-3.5 rounded-xl border border-slate-800/60 flex items-start gap-3">
+                        <MapPinIcon className="w-5 h-5 text-rose-500 mt-0.5" />
+                        <div>
+                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Oldest Restaurant</span>
+                          <span className="text-sm font-bold text-white block mt-0.5">{activeFacts.oldestRestaurant.name}</span>
+                          <span className="text-xs text-slate-400 block mt-0.5">Located in {activeFacts.oldestRestaurant.city}</span>
+                        </div>
+                      </div>
+
+                      {/* Sports Teams */}
+                      <div className="bg-slate-800/30 p-3.5 rounded-xl border border-slate-800/60 flex items-start gap-3">
+                        <TrophyIcon className="w-5 h-5 text-emerald-500 mt-0.5" />
+                        <div className="w-full">
+                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Major Sports Teams</span>
+                          {activeFacts.sports.nba.length === 0 && activeFacts.sports.nfl.length === 0 && activeFacts.sports.mlb.length === 0 ? (
+                            <span className="text-xs text-slate-400 block mt-1">No major league teams (NFL/NBA/MLB)</span>
+                          ) : (
+                            <div className="flex flex-col gap-1.5 mt-2">
+                              {activeFacts.sports.nfl.length > 0 && (
+                                <div className="text-xs">
+                                  <span className="font-bold text-amber-500 mr-1.5">NFL:</span>
+                                  <span className="text-slate-200 font-semibold">{activeFacts.sports.nfl.join(', ')}</span>
+                                </div>
+                              )}
+                              {activeFacts.sports.nba.length > 0 && (
+                                <div className="text-xs">
+                                  <span className="font-bold text-sky-500 mr-1.5">NBA:</span>
+                                  <span className="text-slate-200 font-semibold">{activeFacts.sports.nba.join(', ')}</span>
+                                </div>
+                              )}
+                              {activeFacts.sports.mlb.length > 0 && (
+                                <div className="text-xs">
+                                  <span className="font-bold text-emerald-500 mr-1.5">MLB:</span>
+                                  <span className="text-slate-200 font-semibold">{activeFacts.sports.mlb.join(', ')}</span>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
 
-                {/* Step 3: University Quiz (Question 2) */}
-                {game.quizStep === 'question-2' && (
-                  <div className="flex-1 flex flex-col gap-4">
-                    <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-800">
-                      <span className="text-[10px] uppercase font-bold text-sky-400 tracking-wider">
-                        {game.currentMode === 'both' ? 'Question 2: Out of State Distractor' : 'Question: University Quiz'}
-                      </span>
-                      <p className="text-sm font-semibold text-slate-200 mt-1">
-                        Identify the university that is <span className="text-rose-400 font-bold">OUT OF STATE</span> (not located in {activeState.name}).
-                      </p>
-                    </div>
-
-                    <div className="flex flex-col gap-2.5">
-                      {game.universityChoices.map((choice) => (
+                {/* Take Quiz Tab Content */}
+                {activeTab === 'quiz' && (
+                  <div className="flex-1 flex flex-col gap-6">
+                    {/* Step 1: Select Quiz Mode */}
+                    {game.quizStep === 'mode-select' && (
+                      <div className="flex-1 flex flex-col gap-4 animate-fadeIn">
+                        <h5 className="text-sm font-semibold text-slate-300">Choose a Challenge Mode:</h5>
+                        
                         <button
-                          key={choice}
-                          onClick={() => submitUniversityAnswer(choice)}
-                          className="w-full py-3 px-4 bg-slate-800 hover:bg-slate-700 active:bg-slate-650 rounded-xl border border-slate-700 text-left text-sm font-semibold hover:text-white transition-all"
+                          onClick={() => startQuiz('capitol')}
+                          className="w-full text-left p-4 bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 hover:border-teal-500/40 rounded-xl transition-all flex items-start gap-3 group"
                         >
-                          {choice}
+                          <div className="bg-amber-500/10 p-2 rounded-lg text-amber-400 border border-amber-500/20 group-hover:bg-amber-500/20">
+                            <Building2Icon className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <span className="font-bold text-sm text-slate-200 block group-hover:text-white">Option 1: Capitol Quiz</span>
+                            <span className="text-xs text-slate-400 block mt-0.5">Guess the correct official state capitol city.</span>
+                          </div>
                         </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
 
-                {/* Step 4: Feedback Display */}
-                {game.quizStep === 'feedback' && game.lastFeedback && (
-                  <div className="flex-1 flex flex-col gap-5 justify-between">
-                    <div className="flex flex-col gap-4">
-                      <div className="flex justify-center">
-                        {game.lastFeedback.isCorrect ? (
-                          <div className="bg-emerald-500/10 p-4 rounded-full border border-emerald-500/30 text-emerald-400 flex items-center justify-center">
-                            <CheckCircle2Icon className="w-12 h-12 animate-bounce" />
+                        <button
+                          onClick={() => startQuiz('university')}
+                          className="w-full text-left p-4 bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 hover:border-teal-500/40 rounded-xl transition-all flex items-start gap-3 group"
+                        >
+                          <div className="bg-sky-500/10 p-2 rounded-lg text-sky-400 border border-sky-500/20 group-hover:bg-sky-500/20">
+                            <GraduationCapIcon className="w-5 h-5" />
                           </div>
-                        ) : (
-                          <div className="bg-rose-500/10 p-4 rounded-full border border-rose-500/30 text-rose-400 flex items-center justify-center">
-                            <XCircleIcon className="w-12 h-12 animate-bounce" />
+                          <div>
+                            <span className="font-bold text-sm text-slate-200 block group-hover:text-white">Option 2: University Quiz</span>
+                            <span className="text-xs text-slate-400 block mt-0.5">Identify which university is out-of-state.</span>
                           </div>
-                        )}
-                      </div>
+                        </button>
 
-                      <div className="text-center">
-                        <h4 className={`text-xl font-bold ${game.lastFeedback.isCorrect ? 'text-emerald-400' : 'text-rose-400'}`}>
-                          {game.lastFeedback.message}
-                        </h4>
-                        <p className="text-sm text-slate-300 mt-3 leading-relaxed px-2">
-                          {game.lastFeedback.details}
-                        </p>
-                      </div>
-                    </div>
+                        <button
+                          onClick={() => startQuiz('facts')}
+                          className="w-full text-left p-4 bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 hover:border-teal-500/40 rounded-xl transition-all flex items-start gap-3 group"
+                        >
+                          <div className="bg-emerald-500/10 p-2 rounded-lg text-emerald-400 border border-emerald-500/20 group-hover:bg-emerald-500/20">
+                            <SparklesIcon className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <span className="font-bold text-sm text-slate-200 block group-hover:text-white">Option 3: State Facts Quiz</span>
+                            <span className="text-xs text-slate-400 block mt-0.5">Test your knowledge of state nicknames, symbols, and culture.</span>
+                          </div>
+                        </button>
 
-                    <button
-                      onClick={() => setGame(prev => ({ ...prev, quizStep: 'mode-select', lastFeedback: null }))}
-                      className="w-full py-3 bg-teal-600 hover:bg-teal-500 active:bg-teal-700 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-teal-500/15"
-                    >
-                      Choose Another Quiz
-                    </button>
+                        <button
+                          onClick={() => startQuiz('flag')}
+                          className="w-full text-left p-4 bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 hover:border-teal-500/40 rounded-xl transition-all flex items-start gap-3 group"
+                        >
+                          <div className="bg-rose-500/10 p-2 rounded-lg text-rose-400 border border-rose-500/20 group-hover:bg-rose-500/20">
+                            <AwardIcon className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <span className="font-bold text-sm text-slate-200 block group-hover:text-white">Option 4: Flag Quiz</span>
+                            <span className="text-xs text-slate-400 block mt-0.5">Identify states by their official flag.</span>
+                          </div>
+                        </button>
+
+                        <button
+                          onClick={() => startQuiz('both')}
+                          className="w-full text-left p-4 bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 hover:border-teal-500/40 rounded-xl transition-all flex items-start gap-3 group"
+                        >
+                          <div className="bg-teal-500/10 p-2 rounded-lg text-teal-400 border border-teal-500/20 group-hover:bg-teal-500/20">
+                            <BookOpenIcon className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <span className="font-bold text-sm text-slate-200 block group-hover:text-white">Combined: Both Quizzes</span>
+                            <span className="text-xs text-slate-400 block mt-0.5">Test your skills on both capitols and colleges!</span>
+                          </div>
+                        </button>
+                      </div>
+                    )}
+
+                    {/* Step 2: Capitol Quiz (Question 1) */}
+                    {game.quizStep === 'question-1' && (
+                      <div className="flex-1 flex flex-col gap-4 animate-fadeIn">
+                        <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-800">
+                          <span className="text-[10px] uppercase font-bold text-amber-400 tracking-wider">Question 1: State Capitol</span>
+                          <p className="text-sm font-semibold text-slate-200 mt-1">
+                            Which of these is the official Capitol of <span className="text-white underline decoration-teal-400">{activeState.name}</span>?
+                          </p>
+                          <p className="text-xs text-slate-400 mt-2">
+                            Hint: Distractor cities include large metropolitan zones like {activeState.topCities.slice(0, 2).join(' and ')}.
+                          </p>
+                        </div>
+
+                        <div className="flex flex-col gap-2.5">
+                          {game.capitolChoices.map((choice) => (
+                            <button
+                              key={choice}
+                              onClick={() => submitCapitolAnswer(choice)}
+                              className="w-full py-3 px-4 bg-slate-800 hover:bg-slate-700 active:bg-slate-650 rounded-xl border border-slate-700 text-left text-sm font-semibold hover:text-white transition-all"
+                            >
+                              {choice}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step 3: University Quiz (Question 2) */}
+                    {game.quizStep === 'question-2' && (
+                      <div className="flex-1 flex flex-col gap-4 animate-fadeIn">
+                        <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-800">
+                          <span className="text-[10px] uppercase font-bold text-sky-400 tracking-wider">
+                            {game.currentMode === 'both' ? 'Question 2: Out of State Distractor' : 'Question: University Quiz'}
+                          </span>
+                          <p className="text-sm font-semibold text-slate-200 mt-1">
+                            Identify the university that is <span className="text-rose-400 font-bold">OUT OF STATE</span> (not located in {activeState.name}).
+                          </p>
+                        </div>
+
+                        <div className="flex flex-col gap-2.5">
+                          {game.universityChoices.map((choice) => (
+                            <button
+                              key={choice}
+                              onClick={() => submitUniversityAnswer(choice)}
+                              className="w-full py-3 px-4 bg-slate-800 hover:bg-slate-700 active:bg-slate-650 rounded-xl border border-slate-700 text-left text-sm font-semibold hover:text-white transition-all"
+                            >
+                              {choice}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step 3.5: State Facts Quiz */}
+                    {game.quizStep === 'question-facts' && (
+                      <div className="flex-1 flex flex-col gap-4 animate-fadeIn">
+                        <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-800">
+                          <span className="text-[10px] uppercase font-bold text-emerald-400 tracking-wider">State Facts Challenge</span>
+                          <p className="text-sm font-semibold text-slate-200 mt-1">
+                            {game.factsQuestionText}
+                          </p>
+                        </div>
+
+                        <div className="flex flex-col gap-2.5">
+                          {game.factsChoices.map((choice) => (
+                            <button
+                              key={choice}
+                              onClick={() => submitFactsAnswer(choice)}
+                              className="w-full py-3 px-4 bg-slate-800 hover:bg-slate-700 active:bg-slate-650 rounded-xl border border-slate-700 text-left text-sm font-semibold hover:text-white transition-all"
+                            >
+                              {choice}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step 3.6: Flag Quiz */}
+                    {game.quizStep === 'question-flag' && activeFacts && (
+                      <div className="flex-1 flex flex-col gap-4 animate-fadeIn">
+                        <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-800 text-center">
+                          <span className="text-[10px] uppercase font-bold text-rose-400 tracking-wider">Flag Challenge</span>
+                          <p className="text-sm font-semibold text-slate-200 mt-1">
+                            Which state's official flag is shown below?
+                          </p>
+                          
+                          <div className="mt-4 w-full h-32 rounded-xl overflow-hidden border border-slate-700/50 bg-slate-900/60 flex items-center justify-center p-2">
+                            <img 
+                              src={activeFacts.flagUrl} 
+                              alt="State Flag"
+                              className="max-w-full max-h-full object-contain"
+                              referrerPolicy="no-referrer"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="flex flex-col gap-2.5">
+                          {game.flagChoices.map((choice) => (
+                            <button
+                              key={choice}
+                              onClick={() => submitFlagAnswer(choice)}
+                              className="w-full py-3 px-4 bg-slate-800 hover:bg-slate-700 active:bg-slate-650 rounded-xl border border-slate-700 text-left text-sm font-semibold hover:text-white transition-all"
+                            >
+                              {choice}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step 4: Feedback Display */}
+                    {game.quizStep === 'feedback' && game.lastFeedback && (
+                      <div className="flex-1 flex flex-col gap-5 justify-between animate-fadeIn">
+                        <div className="flex flex-col gap-4">
+                          <div className="flex justify-center">
+                            {game.lastFeedback.isCorrect ? (
+                              <div className="bg-emerald-500/10 p-4 rounded-full border border-emerald-500/30 text-emerald-400 flex items-center justify-center">
+                                <CheckCircle2Icon className="w-12 h-12 animate-bounce" />
+                              </div>
+                            ) : (
+                              <div className="bg-rose-500/10 p-4 rounded-full border border-rose-500/30 text-rose-400 flex items-center justify-center">
+                                <XCircleIcon className="w-12 h-12 animate-bounce" />
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="text-center">
+                            <h4 className={`text-xl font-bold ${game.lastFeedback.isCorrect ? 'text-emerald-400' : 'text-rose-400'}`}>
+                              {game.lastFeedback.message}
+                            </h4>
+                            <p className="text-sm text-slate-300 mt-3 leading-relaxed px-2">
+                              {game.lastFeedback.details}
+                            </p>
+                          </div>
+                        </div>
+
+                        <button
+                          onClick={() => setGame(prev => ({ ...prev, quizStep: 'mode-select', lastFeedback: null }))}
+                          className="w-full py-3 bg-teal-600 hover:bg-teal-500 active:bg-teal-700 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-teal-500/15"
+                        >
+                          Choose Another Quiz
+                        </button>
+                      </div>
+                    )}
                   </div>
                 )}
 
@@ -1270,9 +3120,57 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800 bg-slate-950 py-6 text-center text-xs text-slate-500 mt-auto">
+      <footer className="border-t border-slate-800 bg-slate-950 py-4 px-6 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left text-xs text-slate-500 mt-auto gap-4">
         <p>© 2026 US States Explorer & Quiz Game. Fully functional client-side educational platform.</p>
+        <span 
+          style={{ fontFamily: '"Arial Narrow", Arial, sans-serif', fontStretch: 'condensed', letterSpacing: '0.05em' }}
+          className="text-sm font-black uppercase tracking-wider text-slate-600"
+        >
+          WILLIAMHCHANSTUDIO
+        </span>
       </footer>
+
+      {/* Enlarged Image Modal Overlay */}
+      {enlargedImage && (
+        <div 
+          onClick={() => setEnlargedImage(null)}
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-950/80 backdrop-blur-md p-4 animate-fadeIn cursor-zoom-out"
+        >
+          {/* Modal Card */}
+          <div 
+            onClick={(e) => e.stopPropagation()} 
+            className="bg-slate-900/95 border border-slate-800 rounded-2xl p-6 max-w-3xl w-full flex flex-col items-center gap-4 shadow-2xl relative cursor-default"
+          >
+            {/* Close button */}
+            <button 
+              onClick={() => setEnlargedImage(null)}
+              className="absolute top-4 right-4 bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white p-1.5 rounded-lg border border-slate-700/50 transition-all"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+
+            <h4 className="text-lg font-black text-white tracking-tight mr-8">{enlargedImage.title}</h4>
+            
+            <div className="bg-slate-950/40 border border-slate-800/80 rounded-xl p-4 w-full h-[60vh] flex items-center justify-center overflow-hidden">
+              <img 
+                src={enlargedImage.url} 
+                alt={enlargedImage.title} 
+                className="max-w-full max-h-full object-contain animate-fadeIn"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+
+            <button 
+              onClick={() => setEnlargedImage(null)}
+              className="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl border border-slate-700/60 font-semibold text-xs transition-all shadow-md"
+            >
+              Close Overlay
+            </button>
+          </div>
+        </div>
+      )}
 
     </div>
   );

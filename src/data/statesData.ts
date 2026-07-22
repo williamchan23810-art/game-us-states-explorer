@@ -407,5 +407,92 @@ export const statesData: StateData[] = [
     topCities: ["Casper", "Laramie", "Gillette"],
     inStateUniversities: ["University of Wyoming", "Casper College"],
     outOfStateDistractor: { name: "Colorado State University", state: "CO" }
+  },
+  {
+    "id": "AS",
+    "name": "American Samoa",
+    "capitol": "Pago Pago",
+    "topCities": [
+      "Pago Pago",
+      "Tafuna",
+      "Leone"
+    ],
+    "inStateUniversities": [
+      "American Samoa Community College"
+    ],
+    "outOfStateDistractor": {
+      "name": "University of Hawaii",
+      "state": "HI"
+    }
+  },
+  {
+    "id": "GU",
+    "name": "Guam",
+    "capitol": "Hagåtña",
+    "topCities": [
+      "Dededo",
+      "Yigo",
+      "Tamuning"
+    ],
+    "inStateUniversities": [
+      "University of Guam",
+      "Guam Community College"
+    ],
+    "outOfStateDistractor": {
+      "name": "University of Hawaii",
+      "state": "HI"
+    }
+  },
+  {
+    "id": "MP",
+    "name": "Northern Mariana Islands",
+    "capitol": "Saipan",
+    "topCities": [
+      "Saipan",
+      "Tinian",
+      "Rota"
+    ],
+    "inStateUniversities": [
+      "Northern Marianas College"
+    ],
+    "outOfStateDistractor": {
+      "name": "University of Guam",
+      "state": "GU"
+    }
+  },
+  {
+    "id": "PR",
+    "name": "Puerto Rico",
+    "capitol": "San Juan",
+    "topCities": [
+      "San Juan",
+      "Bayamón",
+      "Carolina"
+    ],
+    "inStateUniversities": [
+      "University of Puerto Rico",
+      "Inter American University"
+    ],
+    "outOfStateDistractor": {
+      "name": "University of Miami",
+      "state": "FL"
+    }
+  },
+  {
+    "id": "VI",
+    "name": "US Virgin Islands",
+    "capitol": "Charlotte Amalie",
+    "topCities": [
+      "Charlotte Amalie",
+      "Christiansted",
+      "Cruz Bay"
+    ],
+    "inStateUniversities": [
+      "University of the Virgin Islands"
+    ],
+    "outOfStateDistractor": {
+      "name": "University of Puerto Rico",
+      "state": "PR"
+    }
   }
 ];
